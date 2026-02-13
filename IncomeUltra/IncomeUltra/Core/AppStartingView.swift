@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct AppStartingView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
+            Image(systemName: "dollarsign.circle")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
@@ -20,5 +20,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    AppStartingView()
 }
