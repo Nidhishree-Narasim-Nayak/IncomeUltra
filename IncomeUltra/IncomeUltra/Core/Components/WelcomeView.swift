@@ -11,14 +11,19 @@ struct WelcomeView: View {
     @StateObject private var viewModel = WelcomeViewModel()
     @Binding var shouldShowWelcomeView: Bool
     var body: some View {
-        title
-        Spacer()
-        VStack(spacing: 0) {
-            welcomeImage
-            welcomeText
+        VStack {
+            title
+            Spacer()
+            VStack(spacing: 0) {
+                welcomeImage
+                welcomeText
+            }
+            Spacer()
+            getStartedButton
         }
-        Spacer()
-        getStartedButton
+        .padding()
+        .infinityFrame()
+        .background(Color.appTheme.viewBackground)
     }
 }
 
@@ -45,11 +50,11 @@ private extension WelcomeView {
     }
     
     var getStartedButton: some View {
-        Button {
-            shouldShowWelcomeView = false
-        } label: {
-            Text("Get Started")
-        }
+        Text("Get Started")
+            .primaryButton()
+            .button(.press) {
+                shouldShowWelcomeView = false
+            }
     }
 }
 
